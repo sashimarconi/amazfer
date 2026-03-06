@@ -515,14 +515,36 @@
       gle_href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Material+Icons&display=swap"
     />
     <style>
-      /* Footer mobile fixes: make central container fluid and stack footer elements */
+      /* Footer visual polish: responsive, centered, readable */
+      .gpc-b.esconder_desktop, .gpc-b.esconder_mobile{
+        background: #000;
+        color: #d0d0d0;
+        padding-top: 22px;
+        padding-bottom: 22px;
+      }
+      .gpc-b .centralizar{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:960px;margin:0 auto;padding:0 18px;box-sizing:border-box}
+      .gpc-b .gpc-e{width:100%;box-sizing:border-box}
+      .gpc-b .e_imagem .imagem{width:160px;height:48px;background-size:contain;background-position:center;background-repeat:no-repeat;margin:0 auto}
+      .gpc-b .e_texto .c{color:#cfcfcf;font-size:14px;line-height:1.5;text-align:center}
+      .gpc-b .e_texto .c b{color:#fff}
+      .gpc-b .e_linha_horizontal .c{width:90%;height:3px;background:rgba(255,255,255,0.08);margin:12px auto;border-radius:2px}
+
+      /* Desktop: arrange items in a row with spacing */
+      @media all and (min-width: 801px){
+        .gpc-b.esconder_mobile .centralizar{flex-direction:row;align-items:center;justify-content:space-between;padding:22px 40px}
+        .gpc-b.esconder_mobile .e_imagem{flex:0 0 200px}
+        .gpc-b.esconder_mobile .e_texto{flex:1 1 auto;text-align:right}
+        .gpc-b.esconder_mobile .e_texto .c{text-align:right}
+        .gpc-b.esconder_mobile .e_linha_horizontal{order:3;width:100%}
+      }
+
+      /* Mobile specific tweaks */
       @media all and (max-width: 800px) {
-        .centralizar{width:100%;max-width:360px;padding:0 18px;box-sizing:border-box;margin:0 auto}
+        .centralizar{width:100%;max-width:360px;padding:0 18px}
         .gpc-b.esconder_desktop{padding-top:18px;padding-bottom:18px}
         .gpc-b.esconder_desktop .gpc-e{position:static !important;left:auto !important;top:auto !important;width:100% !important;margin:8px 0 !important;float:none !important}
-        .gpc-b.esconder_desktop .e_imagem .imagem{margin:0 auto;background-size:contain !important}
-        .gpc-b.esconder_desktop .e_texto .c{text-align:center}
-        .gpc-b.esconder_desktop .e_linha_horizontal .c{height:3px;margin:12px auto 6px;background:rgba(255,255,255,0.12)}
+        .gpc-b.esconder_desktop .e_imagem .imagem{width:140px;height:40px}
+        .gpc-b .e_texto .c{font-size:13px}
       }
     </style>
   </head>
