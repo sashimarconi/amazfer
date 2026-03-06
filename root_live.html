@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazon Open Now</title>
+</head>
+<body>
+  <script>
+    (function () {
+      fetch('/www.amazonopennow.com/index.html', { cache: 'no-store' })
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (html) {
+          var headTag = '<head>';
+          var baseTag = '<head><base href="/www.amazonopennow.com/">';
+          var nextHtml = html.replace(headTag, baseTag);
+          document.open();
+          document.write(nextHtml);
+          document.close();
+          if (window.location.pathname !== '/') {
+            window.history.replaceState({}, '', '/');
+          }
+        })
+        .catch(function () {
+          document.body.innerHTML = 'Erro ao carregar a página.';
+        });
+    })();
+  </script>
+</body>
+</html>
+	background: #77b;
+
+}
+
+
